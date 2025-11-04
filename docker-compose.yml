@@ -54,3 +54,8 @@ services:
 
 networks:
   notes-app-nw:
+
+  django_app:
+    # ... बाकी कोड ...
+    command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
+
