@@ -19,4 +19,8 @@ EXPOSE 8000
 #RUN python manage.py migrate
 #RUN python manage.py makemigrations
 
+# कंटेनर शुरू होने पर Django सर्वर (Gunicorn) चलाएं
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "notesapp.wsgi:application"]
+
+
 
